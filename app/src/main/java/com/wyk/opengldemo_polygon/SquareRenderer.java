@@ -12,7 +12,9 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class SquareRenderer implements GLSurfaceView.Renderer {
 
-    Square mSquare = new Square();
+//    Square mSquare = new Square();
+//    FlatColoredSquare mSquare = new FlatColoredSquare();
+    SmoothColoredSquare mSquare = new SmoothColoredSquare();
     private float angle;
 
     @Override

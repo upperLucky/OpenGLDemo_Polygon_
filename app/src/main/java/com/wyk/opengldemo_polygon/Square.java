@@ -24,8 +24,8 @@ public class Square {
     // 连接点的顺序
     private short indices[] = {0,1,2,0,2,3};
 
-    private FloatBuffer verexBuffer;
-    private ShortBuffer indexBuffer;
+     FloatBuffer verexBuffer;
+     ShortBuffer indexBuffer;
 
     public Square() {
         // 一个浮点数是四个字节，因此ByteBuffer的容量需要在基础上乘以4
