@@ -118,8 +118,4 @@ public class SquareRenderer implements GLSurfaceView.Renderer {
         // Increse the angle.
         angle++;
     }
-//    Square mSquare = new Square();
-//    FlatColoredSquare mSquare = new FlatColoredSquare();
-    SmoothColoredSquare mSquare = new SmoothColoredSquare();
-    private float angle;
 }
