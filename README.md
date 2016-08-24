@@ -7,4 +7,7 @@
  
  3D坐标变换：绘制3个正方形A,B,C。进行缩放变换，使的B比A小50%，C比B小50%。 然后以屏幕中心逆时针旋转A，B以A为中心顺时针旋转，C以B为中心顺时针旋转同时以自己中心高速逆时针旋转。<br/>
  效果如下：<br/>
- ![image](https://github.com/upperLucky/OpenGLDemo_Polygon_/raw/master/logo/1.gif)
+ ![image](https://github.com/upperLucky/OpenGLDemo_Polygon_/raw/master/logo/1.gif)<br/>
+ 
+ 添加颜色：可以使用单色，也可以定义颜色渐变或者使用材质（类同于二维图形中的各种Brush类型）。<br/>
+ 
