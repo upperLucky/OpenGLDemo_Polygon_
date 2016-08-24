@@ -13,6 +13,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class SquareRenderer implements GLSurfaceView.Renderer {
 
     Square mSquare = new Square();
+    private float angle;
 
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
@@ -54,7 +55,49 @@ public class SquareRenderer implements GLSurfaceView.Renderer {
 
         gl10.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
         gl10.glLoadIdentity();
-        gl10.glTranslatef(0,0,-4);
+        gl10.glTranslatef(0,0,-10);
+
+        // SQUARE A
+        // Save the current matrix.
+        gl10.glPushMatrix();
+        // Rotate square A counter-clockwise.
+        gl10.glRotatef(angle, 0, 0, 1);
+        // Draw square A.
         mSquare.draw(gl10);
+        // Restore the last matrix.
+        gl10.glPopMatrix();
+
+        // SQUARE B
+        // Save the current matrix
+        gl10.glPushMatrix();
+        // Rotate square B before moving it, making it rotate around A.
+        gl10.glRotatef(-angle, 0, 0, 1);
+        // Move square B.
+        gl10.glTranslatef(2, 0, 0);
+        // Scale it to 50% of square A
+        gl10.glScalef(.5f, .5f, .5f);
+        // Draw square B.
+        mSquare.draw(gl10);
+
+        // SQUARE C
+        // Save the current matrix
+        gl10.glPushMatrix();
+        // Make the rotation around B
+        gl10.glRotatef(-angle, 0, 0, 1);
+        gl10.glTranslatef(2, 0, 0);
+        // Scale it to 50% of square B
+        gl10.glScalef(.5f, .5f, .5f);
+        // Rotate around it's own center.
+        gl10.glRotatef(angle*10, 0, 0, 1);
+        // Draw square C.
+        mSquare.draw(gl10);
+
+        // Restore to the matrix as it was before C.
+        gl10.glPopMatrix();
+        // Restore to the matrix as it was before B.
+        gl10.glPopMatrix();
+
+        // Increse the angle.
+        angle++;
     }
 }
